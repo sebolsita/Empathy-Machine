@@ -70,9 +70,9 @@ Empathy Machines VR is a standalone VR experience designed to **raise awareness 
 - **Optimized for Meta Quest:** Standalone APK build.
 
 ### Built With
-* [![Unity][Unity]][Unity-url]
-* [![C#][C#]][C#-url]
-* [![Oculus][Oculus]][Oculus-url]
+* Unity Version : 2022.3.48f1
+* Scripting : C# with Visual Studio
+* Oculus Quest 2/3
 
 ## Installation and Running the Application
 ### Windows Instructions
@@ -102,7 +102,8 @@ Empathy Machines VR is a standalone VR experience designed to **raise awareness 
 Distributed under the ** **. See `LICENSE` for more information.
 
 ## Contact
-Your Team Name - [your_email@domain.com](mailto:your_email@domain.com)
+Team Amused - [your_email@domain.com](mailto:your_email@domain.com)
+Lois - 2107802@swansea.ac.uk
 Project Link: [https://github.com/OmniPenguin7/Empathy-Machine](https://github.com/OmniPenguin7/Empathy-Machine)
 
 ## Acknowledgments
