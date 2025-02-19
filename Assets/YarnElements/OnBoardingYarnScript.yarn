@@ -1,0 +1,153 @@
+﻿title: VariableDeclarations
+tags:
+---
+
+<<declare $completedOnBoarding = false as bool>>
+
+    <<jump OnboardingIntro>>
+===
+
+title: OnboardingIntro
+tags:
+--- 
+
+Hello and welcome to the d/Deaf Awareness Empathy Sim! 
+
+Before you start your immersive experience, 
+you must first learn how to use an XR application.  
+
+Would you like to go through the onboarding tutorial? 
+
+[[Yes]] 
+    <<jump OnboardingStage1>>
+[[No]]
+    <<jump Confirmation>>
+===
+
+title: Confirmation
+tags:
+---
+Are you sure you want to skip the onboarding tutorial? 
+
+[[Yes]]
+    <<jump Briefing1>>
+[[No]]
+    <<jump OnboardingIntro>>
+===
+
+
+title: OnboardingStage1
+tags:
+---
+
+To begin, please walk over to the red circle on the floor across you. 
+To do this move the left joystick forwards and use the right joystick 
+to turn! 
+
+Would you like to go to the next stage? 
+Select yes to continue or no to repeat this stage. 
+
+[[Yes]]
+    <<jump OnboardingStage2>>
+[[No]]
+    <<jump OnboardingStage1>>
+
+===
+
+title: OnboardingStage2
+tags:
+---
+
+Great job! Now, let’s learn how to interact with objects! 
+A table has appeared in the middle of the room. 
+Walk towards it and press the grab button on the right controller 
+as indicated by the diagram! 
+
+Would you like to go to the next stage?
+Select yes to continue or no to repeat this stage. 
+
+[[Yes]]
+    <<jump OnboardingStage3>>
+[[No]]
+    <<jump OnboardingStage2>>
+===
+
+title: OnboardingStage3
+tags:
+---
+
+Now you are talking! 
+Finally, the last thing you will need to learn is 
+how to interact with dialogue. 
+
+A character is waiting outside for you. 
+Open the door by interacting with the handle, 
+the same way you did with the cube, and go greet them! 
+
+===
+
+title: MeetCharacter
+tags:
+---
+
+ 
+
+Hello there! As you can see, my dialogue is above my head!
+Once it disappears, you will be left with two options to choose from. 
+
+Currently, they do not matter, but when you are in the simulation, 
+they will affect your outcomes, so choose wisely. 
+
+Do you understand or would you like me to repeat? 
+
+[[Yes]]
+[[No]]
+    <<jump MeetCharacter>>
+
+Amazing work! 
+
+Now, you will be teleported to learn the diagnosis to keep in mind 
+during the simulation, good luck! 
+
+<<set $completedOnBoarding = true>>
+    <<jump Briefing1>>
+===
+
+title: Briefing1
+tags:
+---
+
+Hello, congratulations on completing your onboarding.
+Now for the patient story and symptoms, with accurate diagnosis to 
+keep in mind when answering questions in the simulator. 
+
+Sound simple?  
+
+[[Yes]]
+    <<jump Briefing2>>
+[[No]]
+    <<jump Briefing1>>
+
+===
+
+title: Briefing2
+tags:
+---
+
+The patient you will be roleplaying has these main symptoms; 
+
+Wounds that are not healing.  
+
+Numbness in limbs.  
+
+An increase in thirst.  
+
+The suitable diagnosis for this level of simulation accuracy is diabetes. 
+The patient's story will line up with these symptoms. 
+Your job is to ensure the doctor makes the correct diagnosis. 
+For the three stages, 
+you will try and convey the three symptoms; wound healing, numbness and fluid intake. 
+Now, you will enter the simulation. 
+    <<activate_simulation YarnCommands>>
+===
+
