@@ -18,9 +18,9 @@ you must first learn how to use an XR application.
 
 Would you like to go through the onboarding tutorial? 
 
-[[Yes]] 
+Yes
     <<jump OnboardingStage1>>
-[[No]]
+No
     <<jump Confirmation>>
 ===
 
@@ -29,9 +29,9 @@ tags:
 ---
 Are you sure you want to skip the onboarding tutorial? 
 
-[[Yes]]
+Yes
     <<jump Briefing1>>
-[[No]]
+No
     <<jump OnboardingIntro>>
 ===
 
@@ -47,9 +47,9 @@ to turn!
 Would you like to go to the next stage? 
 Select yes to continue or no to repeat this stage. 
 
-[[Yes]]
+Yes
     <<jump OnboardingStage2>>
-[[No]]
+No
     <<jump OnboardingStage1>>
 
 ===
@@ -66,9 +66,9 @@ as indicated by the diagram!
 Would you like to go to the next stage?
 Select yes to continue or no to repeat this stage. 
 
-[[Yes]]
+Yes
     <<jump OnboardingStage3>>
-[[No]]
+No
     <<jump OnboardingStage2>>
 ===
 
@@ -89,20 +89,21 @@ the same way you did with the cube, and go greet them!
 title: MeetCharacter
 tags:
 ---
-
- 
-
 Hello there! As you can see, my dialogue is above my head!
 Once it disappears, you will be left with two options to choose from. 
 
 Currently, they do not matter, but when you are in the simulation, 
 they will affect your outcomes, so choose wisely. 
 
-Do you understand or would you like me to repeat? 
+Would you like me to repeat? 
 
-[[Yes]]
-[[No]]
-    <<jump MeetCharacter>>
+Yes
+     <<jump MeetCharacter>>
+No
+===
+title: MeetCharacterContinued
+tags:
+---
 
 Amazing work! 
 
@@ -123,9 +124,9 @@ keep in mind when answering questions in the simulator.
 
 Sound simple?  
 
-[[Yes]]
+Yes
     <<jump Briefing2>>
-[[No]]
+No
     <<jump Briefing1>>
 
 ===
@@ -151,3 +152,24 @@ Now, you will enter the simulation.
     <<activate_simulation YarnCommands>>
 ===
 
+title: SimulationSignLanguageTranslator
+tags:
+---
+They just called your name. #PatientCalledCue
+
+What brings you in today? #Question1
+
+How long have you had it? #Question2
+
+Have you noticed any swelling or redness? #Question3
+
+Have you had any fever or chills? #Question4
+
+Have you been feeling more tired than usual? #Question5
+
+Are you drinking more water than usual? #Question6
+
+Any numbness or tingling in your hands or feet? #Question7
+
+I’d like to run some tests. Your symptoms could be signs of high blood sugar, possibly diabetes. We’ll do a blood test to check your glucose levels #Diagnosis
+===
