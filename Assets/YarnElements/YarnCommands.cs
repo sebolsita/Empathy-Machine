@@ -10,10 +10,14 @@ public class YarnCommands : MonoBehaviour
 
     public GameObject stageOneTargetObject, stageTwoTargetObject, stageThreeTargetObject;
 
+    public Animator talkingInstructorAni, idleDoctorAni;
+
     public void Start()
     {
         dialogueRunner = FindObjectOfType<DialogueRunner>();
     }
+
+    //Onboarding//
 
     [YarnCommand("activate_onboarding_stage_one")]
     public void ActivateOnboardingStageOne()
@@ -58,4 +62,20 @@ public class YarnCommands : MonoBehaviour
 
         Debug.Log("Onboarding event " + stage + " has been started");
     }
+
+    //Animations//
+
+    [YarnCommand("talking_instructor_animation")]
+    public void TalkingNPCAnimation()
+    {
+        talkingInstructorAni.SetInteger("isTalking", 1);
+    }
+
+    [YarnCommand("stop_talking_instructor_animation")]
+    public void StopTalkingNPCAnimation()
+    {
+        talkingInstructorAni.SetInteger("isTalking", 0);
+    }
+
+    
 }

@@ -10,14 +10,14 @@ tags:
 title: OnboardingIntro
 tags:
 --- 
-
+<<talking_instructor_animation YarnCommands>>
 Hello and welcome to the d/Deaf Awareness Empathy Sim! 
 
 Before you start your immersive experience, 
 you must first learn how to use an XR application.  
 
 Would you like to go through the onboarding tutorial? 
-
+<<stop_talking_instructor_animation YarnCommands>>
 Yes
     <<jump OnboardingStage1>>
 No
@@ -47,6 +47,8 @@ to turn!
 Would you like to go to the next stage? 
 Select yes to continue or no to repeat this stage. 
 
+<<activate_onboarding_stage_one YarnCommands>>
+
 Yes
     <<jump OnboardingStage2>>
 No
@@ -66,6 +68,8 @@ as indicated by the diagram!
 Would you like to go to the next stage?
 Select yes to continue or no to repeat this stage. 
 
+<<activate_onboarding_stage_two YarnCommands>>
+
 Yes
     <<jump OnboardingStage3>>
 No
@@ -84,6 +88,7 @@ A character is waiting outside for you.
 Open the door by interacting with the handle, 
 the same way you did with the cube, and go greet them! 
 
+<<activate_onboarding_stage_three YarnCommands>>
 ===
 
 title: MeetCharacter
