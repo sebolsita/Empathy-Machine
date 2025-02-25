@@ -6,11 +6,17 @@ using Yarn.Unity;
 
 public class YarnCommands : MonoBehaviour
 {
+    public InMemoryVariableStorage yarnInMemoryStorage;
+
     public DialogueRunner dialogueRunner;
 
     public GameObject stageOneTargetObject, stageTwoTargetObject, stageThreeTargetObject;
 
-    public Animator talkingInstructorAni, idleDoctorAni;
+    public Animator talkingInstructorAni,talkingInstructor2Ani, idleDoctorAni, talkingInterpreterAni, walkingNurseAni;
+
+    public GameObject briefingRoomTarget;
+
+    public GameObject player;
 
     public void Start()
     {
@@ -63,19 +69,83 @@ public class YarnCommands : MonoBehaviour
         Debug.Log("Onboarding event " + stage + " has been started");
     }
 
-    //Animations//
+    //Animations
+
+    //Instructor1
 
     [YarnCommand("talking_instructor_animation")]
-    public void TalkingNPCAnimation()
+    public void TalkingInstructorAnimation()
     {
-        talkingInstructorAni.SetInteger("isTalking", 1);
+        talkingInstructorAni.SetInteger("isInstructorTalking", 1);
     }
 
     [YarnCommand("stop_talking_instructor_animation")]
-    public void StopTalkingNPCAnimation()
+    public void StopTalkingInstructorAnimation()
     {
-        talkingInstructorAni.SetInteger("isTalking", 0);
+        talkingInstructorAni.SetInteger("isInstructorTalking", 0);
     }
 
-    
+    //Instructor2
+
+    [YarnCommand("talking_instructor2_animation")]
+
+    public void TalkingInstructor2Animation()
+    {
+        talkingInstructor2Ani.SetInteger("isInstructor2Talking", 1);
+    }
+
+    [YarnCommand("stop_talking_instructor2_animation")]
+
+    public void StopTalkingInstructor2Animation()
+    {
+        talkingInstructor2Ani.SetInteger("isInstructor2Talking", 0);
+    }
+
+    //Doctor
+
+    [YarnCommand("talking_doctor_animation")]
+    public void TalkingDoctorAnimation()
+    {
+        talkingInstructorAni.SetInteger("isDoctorTalking", 1);
+    }
+
+    [YarnCommand("stop_talking_doctor_animation")]
+    public void StopTalkingDoctorAnimation()
+    {
+        talkingInstructorAni.SetInteger("isDoctorTalking", 0);
+    }
+
+    //Interpreter
+
+    [YarnCommand("talking_interpreter_animation")]
+    public void TalkingInterpreterAnimation()
+    {
+        talkingInstructorAni.SetInteger("isInterpreterTalking", 1);
+    }
+
+    [YarnCommand("stop_talking_interpreter_animation")]
+    public void StopTalkingInterpreterAnimation()
+    {
+        talkingInstructorAni.SetInteger("isInterpreterTalking", 0);
+    }
+
+    //Nurse
+
+    [YarnCommand("nurse_reached_trigger")]
+
+    public void NurseReachedTrigger()
+    {
+        walkingNurseAni.SetInteger("hasNurseReachedTrigger", 1);
+    }
+
+    //Teleports
+
+    //Briefing Room
+
+    [YarnCommand("teleport_to_briefing_room")]
+
+    public void TeleportToBriefingRoom()
+    {
+        player.transform.position = briefingRoomTarget.transform.position;
+    }
 }

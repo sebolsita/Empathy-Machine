@@ -2,36 +2,42 @@
 tags:
 ---
 
-<<declare $completedOnBoarding = false as bool>>
+<<declare $completedOnBoarding = false as bool>> //declare a boolean variable to check if the onboarding has been completed
+<<declare $completedOnboardingStageOne = false as bool>> //declare a boolean variable to check if the first stage of onboarding has been completed
+<<declare $completedOnboardingStageTwo = false as bool>> //declare a boolean variable to check if the second stage of onboarding has been completed
+<<declare $completedOnboardingStageThree = false as bool>> //declare a boolean variable to check if the third stage of onboarding has been completed
 
-    <<jump OnboardingIntro>>
+<<jump OnboardingIntro>> //jump to the onboarding introduction
 ===
 
 title: OnboardingIntro
 tags:
 --- 
-<<talking_instructor_animation YarnCommands>>
-Hello and welcome to the d/Deaf Awareness Empathy Sim! 
+<<talking_instructor_animation YarnCommands>> //start the instructors talking animation
+Hello and welcome to the d/Deaf Awareness Empathy Sim! //introduces the player to the simulation
 
-Before you start your immersive experience, 
+Before you start your immersive experience, //lets the player know that they will be going through an onboarding tutorial
 you must first learn how to use an XR application.  
 
-Would you like to go through the onboarding tutorial? 
+Would you like to go through the onboarding tutorial? //asks the player if they would like to go through the onboarding tutorial
 <<stop_talking_instructor_animation YarnCommands>>
-Yes
+-> Yes
     <<jump OnboardingStage1>>
-No
+-> No
     <<jump Confirmation>>
 ===
 
 title: Confirmation
 tags:
 ---
-Are you sure you want to skip the onboarding tutorial? 
+<<stop_talking_instructor_animation YarnCommands>> //stops the instructors talking animation
+Are you sure you want to skip the onboarding tutorial? //asks the player if they are sure they want to skip the onboarding tutorial
+<<stop_talking_instructor_animation YarnCommands>>
 
-Yes
+-> Yes
     <<jump Briefing1>>
-No
+    <<set $completedOnBoarding = true>> //sets the onboarding variable to true
+-> No
     <<jump OnboardingIntro>>
 ===
 
@@ -39,47 +45,54 @@ No
 title: OnboardingStage1
 tags:
 ---
+<<talking_instructor_animation YarnCommands>> //start the instructors talking animation for onboarding stage 1
 
-To begin, please walk over to the red circle on the floor across you. 
-To do this move the left joystick forwards and use the right joystick 
+To begin, please walk over to the red circle on the floor across you. //instructs the player to walk to the red circle
+To do this move the left joystick forwards and use the right joystick //gets the player used to the controls
 to turn! 
 
-Would you like to go to the next stage? 
-Select yes to continue or no to repeat this stage. 
 
-<<activate_onboarding_stage_one YarnCommands>>
+<<activate_onboarding_stage_one YarnCommands>> //starts the first stage of the onboarding tutorial
+<<stop_talking_instructor_animation YarnCommands>>
 
-Yes
+<<if $completedOnboardingStageOne is true>> //checks if the first stage of the onboarding tutorial has been completed   
+
+Would you like to go to the next stage? //asks the player if they would like to go to the next stage
+Select yes to continue or no to repeat this stage. //instructs the player on how to proceed
+->Yes
     <<jump OnboardingStage2>>
-No
+->No
     <<jump OnboardingStage1>>
-
+<<endif>>
 ===
 
 title: OnboardingStage2
 tags:
 ---
-
+<<talking_instructor_animation YarnCommands>> //start the instructors talking animation for onboarding stage 2
 Great job! Now, let’s learn how to interact with objects! 
 A table has appeared in the middle of the room. 
 Walk towards it and press the grab button on the right controller 
 as indicated by the diagram! 
+<<activate_onboarding_stage_two YarnCommands>> //starts the second stage of the onboarding tutorial
+<<stop_talking_instructor_animation YarnCommands>> //stops the instructors talking animation
 
-Would you like to go to the next stage?
-Select yes to continue or no to repeat this stage. 
+<<if $completedOnboardingStageTwo is true>> //checks if the second stage of the onboarding tutorial has been completed
 
-<<activate_onboarding_stage_two YarnCommands>>
+Would you like to go to the next stage? //asks the player if they would like to go to the next stage
+Select yes to continue or no to repeat this stage. //instructs the player on how to proceed
 
-Yes
+-> Yes
     <<jump OnboardingStage3>>
-No
+-> No
     <<jump OnboardingStage2>>
+<<endif>>
 ===
 
 title: OnboardingStage3
 tags:
 ---
-
+<<talking_instructor_animation YarnCommands>> //start the instructors talking animation for onboarding stage 3  
 Now you are talking! 
 Finally, the last thing you will need to learn is 
 how to interact with dialogue. 
@@ -87,13 +100,15 @@ how to interact with dialogue.
 A character is waiting outside for you. 
 Open the door by interacting with the handle, 
 the same way you did with the cube, and go greet them! 
+<<stop_talking_instructor_animation YarnCommands>> //stops the instructors talking animation
 
-<<activate_onboarding_stage_three YarnCommands>>
+<<activate_onboarding_stage_three YarnCommands>> //starts the third stage of the onboarding tutorial
 ===
 
 title: MeetCharacter
 tags:
 ---
+<<talking_instructor2_animation YarnCommands>> //start the instructors talking animation for meeting the character
 Hello there! As you can see, my dialogue is above my head!
 Once it disappears, you will be left with two options to choose from. 
 
@@ -101,7 +116,7 @@ Currently, they do not matter, but when you are in the simulation,
 they will affect your outcomes, so choose wisely. 
 
 Would you like me to repeat? 
-
+<<stop_talking_instructor2_animation target=YarnCommands>> //stops the instructors talking animation
 Yes
      <<jump MeetCharacter>>
 No
@@ -109,26 +124,27 @@ No
 title: MeetCharacterContinued
 tags:
 ---
-
+<<talking_instructor2_animation YarnCommands>> //start the instructors talking animation for meeting the character
 Amazing work! 
 
 Now, you will be teleported to learn the diagnosis to keep in mind 
 during the simulation, good luck! 
-
-<<set $completedOnBoarding = true>>
+<<stop_talking_instructor2_animation target=YarnCommands>> //stops the instructors talking animation
+    <<set $completedOnBoarding = true>>
     <<jump Briefing1>>
 ===
 
 title: Briefing1
 tags:
 ---
-
+<<teleport_to_briefing_room YarnCommands>> //teleports the player to the briefing room
+<<talking_instructor_animation YarnCommands>> //start the instructors talking animation for the briefing
 Hello, congratulations on completing your onboarding.
 Now for the patient story and symptoms, with accurate diagnosis to 
 keep in mind when answering questions in the simulator. 
 
 Sound simple?  
-
+<<stop_talking_instructor_animation YarnCommands>> //stops the instructors talking animation
 Yes
     <<jump Briefing2>>
 No
@@ -157,10 +173,16 @@ Now, you will enter the simulation.
     <<activate_simulation YarnCommands>>
 ===
 
-title: SimulationSignLanguageTranslator
+
+title: SimulationSignLanguageTranslatorWaiting
 tags:
 ---
+
 They just called your name. #PatientCalledCue
+===
+title: SimulationSignLanguageTranslatorOffice
+tags:
+---
 
 What brings you in today? #Question1
 
