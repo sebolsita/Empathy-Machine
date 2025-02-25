@@ -13,13 +13,14 @@ tags:
 title: OnboardingIntro
 tags:
 --- 
-<<talking_instructor_animation YarnCommands>> //start the instructors talking animation
-Hello and welcome to the d/Deaf Awareness Empathy Sim! //introduces the player to the simulation
+<<talking_instructor_animation YarnCommands>>  //start the instructors talking animation
+Hello and welcome to the d/Deaf Awareness Empathy Sim! #line:InstructorLine1 //introduces the player to the simulation
 
-Before you start your immersive experience, //lets the player know that they will be going through an onboarding tutorial
-you must first learn how to use an XR application.  
+Before you start your immersive experience, you must first learn how to use an XR application. #line:InstructorLine2 //lets the player know that they will be going through an onboarding tutorial
 
-Would you like to go through the onboarding tutorial? //asks the player if they would like to go through the onboarding tutorial
+
+Would you like to go through the onboarding tutorial? #line:InstructorLine3 //asks the player if they would like to go through the onboarding tutorial
+Move the right controller and press the trigger to choose your answer. #line:ChooseAnswer //instructs the player on how to choose options
 <<stop_talking_instructor_animation YarnCommands>>
 -> Yes
     <<jump OnboardingStage1>>
@@ -30,8 +31,8 @@ Would you like to go through the onboarding tutorial? //asks the player if they 
 title: Confirmation
 tags:
 ---
-<<stop_talking_instructor_animation YarnCommands>> //stops the instructors talking animation
-Are you sure you want to skip the onboarding tutorial? //asks the player if they are sure they want to skip the onboarding tutorial
+<<talking_instructor_animation YarnCommands>> //stops the instructors talking animation
+Are you sure you want to skip the onboarding tutorial? #line:InstructorLine4 //asks the player if they are sure they want to skip the onboarding tutorial
 <<stop_talking_instructor_animation YarnCommands>>
 
 -> Yes
@@ -47,18 +48,18 @@ tags:
 ---
 <<talking_instructor_animation YarnCommands>> //start the instructors talking animation for onboarding stage 1
 
-To begin, please walk over to the red circle on the floor across you. //instructs the player to walk to the red circle
-To do this move the left joystick forwards and use the right joystick //gets the player used to the controls
-to turn! 
+To begin, please walk over to the red circle on the floor across you. #line:InstructorLine5 //instructs the player to walk to the red circle
+To do this move the left joystick forwards and use the right joystick to turn! #line:InstructorLine6 //gets the player used to the controls
 
 
 <<activate_onboarding_stage_one YarnCommands>> //starts the first stage of the onboarding tutorial
 <<stop_talking_instructor_animation YarnCommands>>
+<<set $completedOnboardingStageOne = true>> //sets the first stage of the onboarding tutorial to true
 
 <<if $completedOnboardingStageOne is true>> //checks if the first stage of the onboarding tutorial has been completed   
 
-Would you like to go to the next stage? //asks the player if they would like to go to the next stage
-Select yes to continue or no to repeat this stage. //instructs the player on how to proceed
+Would you like to go to the next stage? #line:InstructorLine7 //asks the player if they would like to go to the next stage
+Select yes to continue or no to repeat this stage. #line:InstructorLine8 //instructs the player on how to proceed
 ->Yes
     <<jump OnboardingStage2>>
 ->No
@@ -70,17 +71,17 @@ title: OnboardingStage2
 tags:
 ---
 <<talking_instructor_animation YarnCommands>> //start the instructors talking animation for onboarding stage 2
-Great job! Now, let’s learn how to interact with objects! 
-A table has appeared in the middle of the room. 
-Walk towards it and press the grab button on the right controller 
-as indicated by the diagram! 
+Great job! Now, let’s learn how to interact with objects! #line:InstructorLine9 //instructs the player on how to interact with objects
+A table has appeared in the middle of the room. #line:InstructorLine10 
+Walk towards it and press the grab button on the right controller as indicated by the diagram! #line:InstructorLine11
 <<activate_onboarding_stage_two YarnCommands>> //starts the second stage of the onboarding tutorial
 <<stop_talking_instructor_animation YarnCommands>> //stops the instructors talking animation
+<<set $completedOnboardingStageTwo = true>> //sets the second stage of the onboarding tutorial to true
 
 <<if $completedOnboardingStageTwo is true>> //checks if the second stage of the onboarding tutorial has been completed
 
-Would you like to go to the next stage? //asks the player if they would like to go to the next stage
-Select yes to continue or no to repeat this stage. //instructs the player on how to proceed
+Would you like to go to the next stage? #line:InstructorLine7B //asks the player if they would like to go to the next stage
+Select yes to continue or no to repeat this stage. #InstructorLine8B //instructs the player on how to proceed
 
 -> Yes
     <<jump OnboardingStage3>>
@@ -93,13 +94,11 @@ title: OnboardingStage3
 tags:
 ---
 <<talking_instructor_animation YarnCommands>> //start the instructors talking animation for onboarding stage 3  
-Now you are talking! 
-Finally, the last thing you will need to learn is 
-how to interact with dialogue. 
+Now you are talking! #line:InstructorLine12
+Finally, the last thing you will need to learn is how to interact with dialogue. #line:InstructorLine13
 
-A character is waiting outside for you. 
-Open the door by interacting with the handle, 
-the same way you did with the cube, and go greet them! 
+A character is waiting outside for you. #line:InstructorLine15
+Open the door by interacting with the handle, the same way you did with the cube, and go greet them! #line:InstructorLine16
 <<stop_talking_instructor_animation YarnCommands>> //stops the instructors talking animation
 
 <<activate_onboarding_stage_three YarnCommands>> //starts the third stage of the onboarding tutorial
@@ -109,26 +108,58 @@ title: MeetCharacter
 tags:
 ---
 <<talking_instructor2_animation YarnCommands>> //start the instructors talking animation for meeting the character
-Hello there! As you can see, my dialogue is above my head!
-Once it disappears, you will be left with two options to choose from. 
+Hello there! As you can see, my dialogue is above my head! #line:InstructorLine17
+Once it disappears, you will be left with two options to choose from. #line:InstructorLine18
 
-Currently, they do not matter, but when you are in the simulation, 
-they will affect your outcomes, so choose wisely. 
-
-Would you like me to repeat? 
+Would you like me to repeat? #line:InstructorLine19
 <<stop_talking_instructor2_animation target=YarnCommands>> //stops the instructors talking animation
-Yes
+->Yes
      <<jump MeetCharacter>>
-No
+->No
+    <<jump MeetCharacter2>>
 ===
-title: MeetCharacterContinued
+
+
+title: MeetCharacter2
 tags:
 ---
 <<talking_instructor2_animation YarnCommands>> //start the instructors talking animation for meeting the character
-Amazing work! 
+Let's give you some options! #line:InstructorLine20
 
-Now, you will be teleported to learn the diagnosis to keep in mind 
-during the simulation, good luck! 
+Do you like ice cream? #line:InstructorLine21
+->Yes
+    <<jump LikesIceCream>>
+->No
+    <<jump DislikesIceCream>>
+
+===
+
+title: LikesIceCream
+tags:
+---
+<<talking_instructor2_animation YarnCommands>> //start the instructors talking animation for meeting the character
+Great! I like ice cream too! #line:InstructorLine22
+<<stop_talking_instructor2_animation target=YarnCommands>> //stops the instructors talking animation
+    <<jump MeetCharacter3>>
+
+===
+
+title: DislikesIceCream
+tags:
+---
+<<talking_instructor2_animation YarnCommands>> //start the instructors talking animation for meeting the character
+That's okay! Ice cream isn't for everyone. #line:InstructorLine23
+<<stop_talking_instructor2_animation target=YarnCommands>> //stops the instructors talking animation
+    <<jump MeetCharacter3>>
+===
+
+title: MeetCharacter3
+tags:
+---
+<<talking_instructor2_animation YarnCommands>> //start the instructors talking animation for meeting the character
+Amazing work! #line:InstructorLine24
+
+Now, you will be teleported to learn the diagnosis to keep in mind during the simulation, good luck! #line:InstructorLine25
 <<stop_talking_instructor2_animation target=YarnCommands>> //stops the instructors talking animation
     <<set $completedOnBoarding = true>>
     <<jump Briefing1>>
@@ -139,11 +170,10 @@ tags:
 ---
 <<teleport_to_briefing_room YarnCommands>> //teleports the player to the briefing room
 <<talking_instructor_animation YarnCommands>> //start the instructors talking animation for the briefing
-Hello, congratulations on completing your onboarding.
-Now for the patient story and symptoms, with accurate diagnosis to 
-keep in mind when answering questions in the simulator. 
+Hello, congratulations on completing your onboarding. #line:Briefing1
+Now for the patient story and symptoms, with accurate diagnosis to keep in mind when answering questions in the simulator. #line:Briefing2
 
-Sound simple?  
+Sound simple?  #line:Briefing3
 <<stop_talking_instructor_animation YarnCommands>> //stops the instructors talking animation
 Yes
     <<jump Briefing2>>
@@ -155,48 +185,56 @@ No
 title: Briefing2
 tags:
 ---
-
-The patient you will be roleplaying has these main symptoms; 
-
-Wounds that are not healing.  
-
-Numbness in limbs.  
-
-An increase in thirst.  
-
-The suitable diagnosis for this level of simulation accuracy is diabetes. 
-The patient's story will line up with these symptoms. 
-Your job is to ensure the doctor makes the correct diagnosis. 
-For the three stages, 
-you will try and convey the three symptoms; wound healing, numbness and fluid intake. 
-Now, you will enter the simulation. 
-    <<activate_simulation YarnCommands>>
+<<talking_instructor_animation YarnCommands>> //start the instructors talking animation for the briefing
+The patient you will be roleplaying has these main symptoms; #line:Briefing4
+Wounds that are not healing.  #line:Briefing6
+Numbness in limbs.  #line:Briefing7
+An increase in thirst.  #line:Briefing8
+The suitable diagnosis for this level of simulation accuracy is type 2 diabetes. #line:Briefing9
+The patient's story will line up with these symptoms. #line:Briefing10
+Your job is to ensure the doctor makes the correct diagnosis.#line:Briefing12
+For the three stages, you will try and convey the three symptoms; wound healing, numbness and fluid intake. #line:Briefing13
+Now, you will enter the simulation. #line:Briefing14
+<<stop_talking_instructor_animation YarnCommands>> //stops the instructors talking animation
+<<activate_simulation YarnCommands>>
 ===
 
 
 title: SimulationSignLanguageTranslatorWaiting
 tags:
 ---
-
-They just called your name. #PatientCalledCue
+<<talking_interpreter_animation YarnCommands>> //start the instructors talking animation for the interpreter
+They just called your name. #line:Interpreter1
 ===
 title: SimulationSignLanguageTranslatorOffice
 tags:
 ---
 
-What brings you in today? #Question1
+What brings you in today? #line:Interpreter2
 
-How long have you had it? #Question2
+How long have you had it? #line:Interpreter3
 
-Have you noticed any swelling or redness? #Question3
+Have you noticed any swelling or redness? #line:Interpreter4
 
-Have you had any fever or chills? #Question4
+Have you had any fever or chills? #line:Interpreter5
 
-Have you been feeling more tired than usual? #Question5
+Have you been feeling more tired than usual? #line:Interpreter6
 
-Are you drinking more water than usual? #Question6
+Are you drinking more water than usual? #line:Interpreter7
 
-Any numbness or tingling in your hands or feet? #Question7
+Any numbness or tingling in your hands or feet? #line:Interpreter8
 
-I’d like to run some tests. Your symptoms could be signs of high blood sugar, possibly diabetes. We’ll do a blood test to check your glucose levels #Diagnosis
+I’d like to run some tests. Your symptoms could be signs of high blood sugar, possibly diabetes. We’ll do a blood test to check your glucose levels #line:Interpreter9
+===
+
+title: Doctor
+tags:
+---
+<<talking_doctor_animation YarnCommands>> //start the instructors talking animation for the doctor
+*distortion due to hearing aids* #line:Doctor1
+
+H- had #line:Doctor2
+
+
+
 ===
