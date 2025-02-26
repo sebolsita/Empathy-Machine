@@ -6,6 +6,7 @@ tags:
 <<declare $completedOnboardingStageOne = false as bool>> //declare a boolean variable to check if the first stage of onboarding has been completed
 <<declare $completedOnboardingStageTwo = false as bool>> //declare a boolean variable to check if the second stage of onboarding has been completed
 <<declare $completedOnboardingStageThree = false as bool>> //declare a boolean variable to check if the third stage of onboarding has been completed
+<<declare $onboarding_one_trigger_active = false as bool>> //declare a boolean variable to check if the trigger for the first stage of onboarding has been activated
 
 <<jump OnboardingIntro>> //jump to the onboarding introduction
 ===
@@ -48,7 +49,9 @@ To begin, please walk over to the red circle on the floor across you. #line:Inst
 To do this move the left joystick forwards and use the right joystick to turn! #line:InstructorLine6 //gets the player used to the controls
 <<activate_onboarding_stage_one YarnCommands>> //starts the first stage of the onboarding tutorial
 <<stop_talking_instructor_animation YarnCommands>>
-<<set $completedOnboardingStageOne = true>> //sets the first stage of the onboarding tutorial to true
+<<if $onboarding_one_trigger_active is true>> //checks if the trigger for the first stage of the onboarding tutorial is active
+    <<set $completedOnboardingStageOne = true>> //sets the first stage of the onboarding tutorial to true
+<<endif>>
 
 <<if $completedOnboardingStageOne is true>> //checks if the first stage of the onboarding tutorial has been completed   
 
@@ -64,6 +67,7 @@ Select yes to continue or no to repeat this stage. #line:InstructorLine8 //instr
 title: OnboardingStage2
 tags:
 ---
+<<deactivate_onboarding_stage_one YarnCommands>> //deactivates the first stage of the onboarding tutorial
 <<talking_instructor_animation YarnCommands>> //start the instructors talking animation for onboarding stage 2
 Great job! Now, let’s learn how to interact with objects! #line:InstructorLine9 //instructs the player on how to interact with objects
 A table has appeared in the middle of the room. #line:InstructorLine10 
@@ -87,10 +91,11 @@ Select yes to continue or no to repeat this stage. #InstructorLine8B //instructs
 title: OnboardingStage3
 tags:
 ---
+<<deactivate_onboarding_stage_two YarnCommands>> //deactivates the second stage of the onboarding tutorial
 <<talking_instructor_animation YarnCommands>> //start the instructors talking animation for onboarding stage 3  
 Now you are talking! #line:InstructorLine12
 Finally, the last thing you will need to learn is how to interact with dialogue. #line:InstructorLine13
-
+<<door_open YarnCommands>> //opens the door for the player to go outside
 A character is waiting outside for you. #line:InstructorLine15
 Open the door by interacting with the handle, the same way you did with the cube, and go greet them! #line:InstructorLine16
 <<stop_talking_instructor_animation YarnCommands>> //stops the instructors talking animation

@@ -83,6 +83,10 @@ public class YarnCommands : MonoBehaviour
     public AudioSource playerResponse7B;
     public AudioSource playerResponse8B;
 
+    public AudioSource doorOpen;
+
+    public GameObject door;
+
 
 
     public void Start()
@@ -91,6 +95,14 @@ public class YarnCommands : MonoBehaviour
     }
 
     //Onboarding//
+
+    [YarnCommand("door_open")]
+
+    public void OnMouseDown()
+    {
+        door.transform.Rotate(0, 90, 0);
+        doorOpen.Play();
+    }
 
     [YarnCommand("activate_onboarding_stage_one")]
     public void ActivateOnboardingStageOne()
@@ -108,6 +120,18 @@ public class YarnCommands : MonoBehaviour
     public void ActivateOnboardingStageThree()
     {
         stageThreeTargetObject.SetActive(true);
+    }
+
+    [YarnCommand("deactivate_onboarding_stage_one")]
+    public void DeactivateOnboardingStageOne()
+    {
+        stageOneTargetObject.SetActive(false);
+    }
+
+    [YarnCommand("deactivate_onboarding_stage_two")]
+    public void DeactivateOnboardingStageTwo()
+    {
+        stageTwoTargetObject.SetActive(false);
     }
 
     [YarnCommand("activate_simulationA")]
