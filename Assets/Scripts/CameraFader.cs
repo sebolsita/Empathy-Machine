@@ -11,7 +11,12 @@ public class CameraFader : MonoBehaviour
     void Start()
     {
      fadeMaterial = GetComponent<MeshRenderer>().material;
-        FadeOut();
+        FadeIn();
+    }
+
+    public void FadeIn()
+    {
+        Tween.MaterialColor(fadeMaterial, new Color(0, 0, 0, 0), new Color(0, 0, 0, 1), 2f);
     }
 
     public void FadeOut()
