@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Oculus/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/StartEndV7.unity
+    guid: ea5aaf8f263f0554684ac6992ea9a3ef
+  - enabled: 1
+    path: Assets/Scenes/ScenariosV3.unity
+    guid: a9ca9097173e60c42872f7ce3349c2e8
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 94424c94bf7b3d14faa15c0c8186beb8,
       type: 2}
