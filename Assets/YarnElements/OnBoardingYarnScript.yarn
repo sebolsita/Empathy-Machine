@@ -317,7 +317,9 @@ tags:
 <<talking_interpreter_animation YarnCommands>> //start the instructors talking animation for the interpreter
 I’d like to run some tests. Your symptoms could be signs of high blood sugar, possibly diabetes. We’ll do a blood test to check your glucose levels #line:Interpreter9
 <<stop_talking_interpreter_animation YarnCommands>> //stops the instructors talking animation for the interpreter
-<<play_inner_monologue9B YarnCommands>> //plays the inner monologue for the player
+<<play_inner_monologue9B YarnCommands>> //plays the inner monologue for the player#
+<<activate_survey_scene YarnCommands>> //activates the survey scene
+    <<jump Survey>> //jumps to the survey scene
 ===
 
 title: DoctorQ1

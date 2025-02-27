@@ -98,7 +98,7 @@ public class YarnCommands : MonoBehaviour
 
     [YarnCommand("door_open")]
 
-    public void OnMouseDown()
+    public void DoorOpen()
     {
         door.transform.Rotate(0, 90, 0);
         doorOpen.Play();
@@ -145,6 +145,13 @@ public class YarnCommands : MonoBehaviour
     public void LoadScenarioSceneB()
     {
         player.transform.position = waitingRoomTarget.transform.position;
+    }
+
+    [YarnCommand("activate_survey_scene")]
+
+    public void LoadSurveyScene()
+    {
+        SceneManager.LoadScene("StartEndV7");
     }
 
     [YarnCommand("restart_onboarding")]
