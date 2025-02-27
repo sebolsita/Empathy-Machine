@@ -52,12 +52,6 @@ public class YarnCommands : MonoBehaviour
     public AudioSource innerMonologue3B;
     public AudioSource innerMonologue4B;
     public AudioSource innerMonologue5B;
-    public AudioSource innerMonologue6B;
-    public AudioSource innerMonologue7B;
-    public AudioSource innerMonologue8B;
-    public AudioSource innerMonologue9B;
-    public AudioSource innerMonologue10B;
-    public AudioSource innerMonologue11B;
 
 
     [Header("Doctor Lines")]
@@ -69,6 +63,13 @@ public class YarnCommands : MonoBehaviour
     public AudioSource doctorQuestionSix;
     public AudioSource doctorQuestionSeven;
     public AudioSource doctorQuestionEight;
+    public AudioSource doctorQuestionNight;
+    public AudioSource doctorQuestionTen;
+    public AudioSource doctorQuestionEleven;
+    public AudioSource doctorLineOne;
+    public AudioSource doctorLineTwo;
+    public AudioSource doctorLineThree;
+    public AudioSource doctorLineFour;
 
     [Header("PlayerLinesA")]
     public AudioSource playerResponse1A;
@@ -91,6 +92,20 @@ public class YarnCommands : MonoBehaviour
     public AudioSource playerResponse6B;
     public AudioSource playerResponse7B;
     public AudioSource playerResponse8B;
+
+    [Header("Interpreter")]
+    public AudioSource interpreterLineOne;
+    public AudioSource interpreterLineTwo;
+    public AudioSource interpreterLineThree;
+    public AudioSource interpreterLineFour;
+    public AudioSource interpreterLineFive;
+    public AudioSource interpreterLineSix;
+    public AudioSource interpreterLineSeven;
+    public AudioSource interpreterLineEight;
+    public AudioSource interpreterLineNine;
+
+    [Header("Nurse")]
+    public AudioSource nurseLineOne;
 
     public AudioSource doorOpen;
 
@@ -345,34 +360,6 @@ public class YarnCommands : MonoBehaviour
         innerMonologue5B.Play();
     }
 
-    [YarnCommand("play_inner_monologue6B")]
-
-    public void play_inner_monologue6B()
-    {
-        innerMonologue6B.Play();
-    }
-
-    [YarnCommand("play_inner_monologue7B")]
-
-    public void play_inner_monologue7B()
-    {
-        innerMonologue7B.Play();
-    }
-
-    [YarnCommand("play_inner_monologue8B")]
-
-    public void play_inner_monologue8B()
-    {
-        innerMonologue8B.Play();
-    }
-
-    [YarnCommand("play_inner_monologue9B")]
-
-    public void play_inner_monologue9B()
-    {
-        innerMonologue9B.Play();
-    }
-
     [YarnCommand("play_inner_monologue1A")]
 
     public void play_inner_monologue1A()
@@ -574,12 +561,6 @@ public class YarnCommands : MonoBehaviour
         playerResponse9A.Play();
     }
 
-    [YarnCommand("player_response_10a")]
-
-    public void PlayerResponse10A()
-    {
-        playerResponse10A.Play();
-    }
 
     //PlayerResponseB
 
