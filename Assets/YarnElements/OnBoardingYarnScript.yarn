@@ -326,7 +326,7 @@ title: DoctorQ1
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the instructors talking animation for the doctor
-*audio distortion due to hearing aids acclimitising* #line:Doctor1A
+*audio distortion due to hearing aids acclimitising* #line:Doctor1
 <<stop_talking_doctor_animation YarnCommands>> //stops the instructors talking animation for the doctor
 <<play_inner_monologue1A YarnCommands>> //plays the inner monologue for the player
  <<player_response_1a YarnCommands>> //plays the player response
@@ -336,7 +336,7 @@ title: DoctorQ2
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-H-*inaudible*long- *inaudible* had- *inaudible* #line:Doctor2A
+H-*inaudible*long- *inaudible* had- *inaudible* #line:Doctor2
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
 <<player_response_2a YarnCommands>> //plays the player response
     <<jump DoctorQ3>> //jumps to the next scene
@@ -345,7 +345,7 @@ title: DoctorQ3
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-*inaudible*symptoms- *inaudible* #line:Doctor3A
+*inaudible*symptoms- *inaudible* #line:Doctor3
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation    
 <<play_inner_monologue2A YarnCommands>> //plays the inner monologue for the player
 <<player_response_3a YarnCommands>> //plays the player response
@@ -357,7 +357,7 @@ title: DoctorQ4
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-*inaudible*notice- *inaudible* #line:Doctor4A
+*inaudible*notice- *inaudible* #line:Doctor4
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
 <<play_inner_monologue4A YarnCommands>> //plays the inner monologue for the player
 <<player_response_4a YarnCommands>> //plays the player response
@@ -368,7 +368,7 @@ title: DoctorQ5
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-*inaudible*fev- recent*inaudible* #line:Doctor5A
+*inaudible*fev- recent*inaudible* #line:Doctor5
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
 <<play_inner_monologue5A YarnCommands>> //plays the inner monologue for the player
 <<player_response_5a YarnCommands>> //plays the player response
@@ -380,7 +380,7 @@ title: DoctorQ6
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-*inaudible*ake- *inaudible* #line:Doctor6A
+*inaudible*ake- *inaudible* #line:Doctor6
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
 <<play_inner_monologue6A YarnCommands>> //plays the inner monologue for the player
 <<player_response_6a YarnCommands>> //plays the player response
@@ -391,7 +391,7 @@ title: DoctorQ7
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-*inaudible*numbness- *inaudible* #line:Doctor7A
+*inaudible*numbness- *inaudible* #line:Doctor7
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
 <<play_inner_monologue7A YarnCommands>> //plays the inner monologue for the player
 <<player_response_7a YarnCommands>> //plays the player response
@@ -402,7 +402,7 @@ title: DoctorQ8
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-*inaudible* #line:Doctor8A
+*inaudible* #line:Doctor8
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
 <<play_inner_monologue8A YarnCommands>> //plays the inner monologue for the player
 <<player_response_8a YarnCommands>> //plays the player response
@@ -413,7 +413,7 @@ title: DoctorL1
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-I can write-..down #line:Doctor9A
+I can write-..down #line:Doctor9
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
 <<player_response_9a YarnCommands>> //plays the player response
 <<spawn_note YarnCommands>> //spawns the note for the player to read
@@ -425,7 +425,7 @@ title: DoctorL2
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-Good- *inaudible* tests-...monitor *inaudible* #line:Doctor10A
+Good- *inaudible* tests-...monitor *inaudible* #line:Doctor10
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
 <<play_inner_monologue9A YarnCommands>> //plays the inner monologue for the player
 <<play_inner_monologue10A YarnCommands>> //plays the inner monologue for the player
@@ -437,7 +437,7 @@ title: DoctorL3
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-*inaudible* #line:Doctor11A
+*inaudible* #line:Doctor11
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
 <<play_inner_monologue11A YarnCommands>> //plays the inner monologue for the player
 <<activate_simulationB YarnCommands>> //activates the second simulation

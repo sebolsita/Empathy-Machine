@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PrimeTween;
+using UnityEngine.Analytics;
 
 public class CameraFader : MonoBehaviour
 {
@@ -10,16 +11,16 @@ public class CameraFader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     fadeMaterial = GetComponent<MeshRenderer>().material;
+        fadeMaterial = GetComponent<MeshRenderer>().material;
         FadeIn();
     }
 
-    public void FadeIn()
+    public void FadeOut()
     {
         Tween.MaterialColor(fadeMaterial, new Color(0, 0, 0, 0), new Color(0, 0, 0, 1), 2f);
     }
 
-    public void FadeOut()
+    public void FadeIn()
     {
         Tween.MaterialColor(fadeMaterial, new Color(0, 0, 0, 1), new Color(0, 0, 0, 0), 2f);
     }
@@ -32,5 +33,15 @@ public class CameraFader : MonoBehaviour
         });
     }
 
+    public void FadeWithDelay()
+    {
+        Tween.MaterialColor(fadeMaterial, new Color(0, 0, 0, 0), new Color(0, 0, 0, 1), 2f).OnComplete(() =>
+        {
+            Tween.Delay(duration: 1f, () =>
+            {
+                Debug.Log("Delay completed"); FadeOut();
+            });
 
+        });
+    }
 }

@@ -24,6 +24,8 @@ public class YarnCommands : MonoBehaviour
 
     public GameObject note;
 
+    public CameraFader cameraFader;
+
     [Header("Inner Monologue")]
     public AudioSource innerMonologue1A;
     public AudioSource innerMonologue1B;
@@ -57,9 +59,6 @@ public class YarnCommands : MonoBehaviour
     public AudioSource doctorQuestionSix;
     public AudioSource doctorQuestionSeven;
     public AudioSource doctorQuestionEight;
-    public AudioSource doctorLineOne;
-    public AudioSource doctorLineTwo;
-    public AudioSource doctorLineThree;
 
     [Header("Player ResponsesA")]
     public AudioSource playerResponse1A;
@@ -137,13 +136,14 @@ public class YarnCommands : MonoBehaviour
     [YarnCommand("activate_simulationA")]
     public void LoadScenarioScene()
     {
-        SceneManager.LoadScene("ScenariosV3");
+        cameraFader.FadeToScene(2f, "ScenariosV3");
     }
 
     [YarnCommand("activate_simulationB")]
 
     public void LoadScenarioSceneB()
     {
+        cameraFader.FadeWithDelay();
         player.transform.position = waitingRoomTarget.transform.position;
     }
 
