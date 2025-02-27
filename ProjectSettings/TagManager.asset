@@ -8,6 +8,7 @@ TagManager:
   - OfficeCanvasTarget
   - SurveyCanvas
   - Dialogue Canvas
+  - PlayerHand
   layers:
   - Default
   - TransparentFX
