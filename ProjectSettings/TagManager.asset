@@ -7,6 +7,7 @@ TagManager:
   - Canvas
   - OfficeCanvasTarget
   - SurveyCanvas
+  - Dialogue Canvas
   layers:
   - Default
   - TransparentFX

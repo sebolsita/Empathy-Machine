@@ -226,8 +226,8 @@ tags:
 <<talking_interpreter_animation YarnCommands>> //start the instructors talking animation for the interpreter
 What brings you in today? #line:Interpreter2
 <<stop_talking_interpreter_animation YarnCommands>> //stops the instructors talking animation for the interpreter
-<<play_inner_monologue2B YarnCommands>> //plays the inner monologue for the player
 <<play_inner_monologue3B YarnCommands>> //plays the inner monologue for the player
+<<play_inner_monologue4B YarnCommands>> //plays the inner monologue for the player
     <<jump SimulationSignLanguageTranslatorOffice2>> //jumps to the next scene
 ===
 
@@ -239,7 +239,7 @@ tags:
 <<talking_interpreter_animation YarnCommands>> //start the instructors talking animation for the interpreter
 How long have you had it? #line:Interpreter3
 <<stop_talking_interpreter_animation YarnCommands>> //stops the instructors talking animation for the interpreter
-<<play_inner_monologue4B YarnCommands>> //plays the inner monologue for the player
+<<play_inner_monologue5B YarnCommands>> //plays the inner monologue for the player
     <<jump SimulationSignLanguageTranslatorOffice3>> //jumps to the next scene
 === 
 
@@ -252,7 +252,7 @@ tags:
 <<talking_interpreter_animation YarnCommands>> //start the instructors talking animation for the interpreter
 Have you noticed any swelling or redness? #line:Interpreter4
 <<stop_talking_interpreter_animation YarnCommands>> //stops the instructors talking animation for the interpreter
-<<play_inner_monologue4B YarnCommands>> //plays the inner monologue for the player
+<<play_inner_monologue6B YarnCommands>> //plays the inner monologue for the player
     <<jump SimulationSignLanguageTranslatorOffice4>> //jumps to the next scene
 ===
 
@@ -265,7 +265,7 @@ tags:
 <<talking_interpreter_animation YarnCommands>> //start the instructors talking animation for the interpreter
 Have you had any fever or chills? #line:Interpreter5
 <<stop_talking_interpreter_animation YarnCommands>> //stops the instructors talking animation for the interpreter
-<<play_inner_monologue5B YarnCommands>> //plays the inner monologue for the player
+<<play_inner_monologue7B YarnCommands>> //plays the inner monologue for the player
     <<jump SimulationSignLanguageTranslatorOffice5>> //jumps to the next scene
 ===
 
@@ -278,7 +278,7 @@ tags:
 <<talking_interpreter_animation YarnCommands>> //start the instructors talking animation for the interpreter
 Have you been feeling more tired than usual? #line:Interpreter6
 <<stop_talking_interpreter_animation YarnCommands>> //stops the instructors talking animation for the interpreter
-<<play_inner_monologue6B YarnCommands>> //plays the inner monologue for the player
+<<play_inner_monologue8B YarnCommands>> //plays the inner monologue for the player
     <<jump SimulationSignLanguageTranslatorOffice6>> //jumps to the next scene
 ===
 
@@ -291,7 +291,7 @@ tags:
 <<talking_interpreter_animation YarnCommands>> //start the instructors talking animation for the interpreter
 Are you drinking more water than usual? #line:Interpreter7
 <<stop_talking_interpreter_animation YarnCommands>> //stops the instructors talking animation for the interpreter
-<<play_inner_monologue7B YarnCommands>> //plays the inner monologue for the player
+<<play_inner_monologueB YarnCommands>> //plays the inner monologue for the player
     <<jump SimulationSignLanguageTranslatorOffice7>> //jumps to the next scene
 ===
 
@@ -336,7 +336,7 @@ title: DoctorQ2
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-H-*inaudible*long- *inaudible* had- *inaudible* #line:Doctor2
+H-*inaudible*long- *inaudible* had- *inaudible* #line:Doctor2 //Doctor asks the player how long they have had the symptom
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
 <<player_response_2a YarnCommands>> //plays the player response
     <<jump DoctorQ3>> //jumps to the next scene
@@ -345,7 +345,7 @@ title: DoctorQ3
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-*inaudible*symptoms- *inaudible* #line:Doctor3
+*inaudible*symptoms- *inaudible* #line:Doctor3 //Doctor asks the player about how often the symptom occurs
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation    
 <<play_inner_monologue2A YarnCommands>> //plays the inner monologue for the player
 <<player_response_3a YarnCommands>> //plays the player response
@@ -357,7 +357,7 @@ title: DoctorQ4
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-*inaudible*notice- *inaudible* #line:Doctor4
+*inaudible*notice- *inaudible* #line:Doctor4 // Doctor asks the player if they have noticed any symptoms
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
 <<play_inner_monologue4A YarnCommands>> //plays the inner monologue for the player
 <<player_response_4a YarnCommands>> //plays the player response
@@ -368,7 +368,7 @@ title: DoctorQ5
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-*inaudible*fev- recent*inaudible* #line:Doctor5
+*inaudible*fev- recent*inaudible* #line:Doctor5 //Doctor asks the player if they have had any fever or chills
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
 <<play_inner_monologue5A YarnCommands>> //plays the inner monologue for the player
 <<player_response_5a YarnCommands>> //plays the player response
@@ -380,7 +380,7 @@ title: DoctorQ6
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-*inaudible*ake- *inaudible* #line:Doctor6
+*inaudible*ake- *inaudible* #line:Doctor6 //Doctor asks the player if they have been feeling more tired than usual
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
 <<play_inner_monologue6A YarnCommands>> //plays the inner monologue for the player
 <<player_response_6a YarnCommands>> //plays the player response
@@ -391,7 +391,7 @@ title: DoctorQ7
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-*inaudible*numbness- *inaudible* #line:Doctor7
+*inaudible*numbness- *inaudible* #line:Doctor7 //Doctor asks the player if they have been experiencing any numbness
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
 <<play_inner_monologue7A YarnCommands>> //plays the inner monologue for the player
 <<player_response_7a YarnCommands>> //plays the player response
@@ -402,7 +402,7 @@ title: DoctorQ8
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-*inaudible* #line:Doctor8
+*inaudible* #line:Doctor8 // Doctor asks the player if they have been drinking more water than usual
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
 <<play_inner_monologue8A YarnCommands>> //plays the inner monologue for the player
 <<player_response_8a YarnCommands>> //plays the player response
@@ -413,7 +413,7 @@ title: DoctorL1
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-I can write-..down #line:Doctor9
+I can write-..down #line:Doctor9 //Doctor tells the player they will write down the symptoms
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
 <<player_response_9a YarnCommands>> //plays the player response
 <<spawn_note YarnCommands>> //spawns the note for the player to read
@@ -425,10 +425,10 @@ title: DoctorL2
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-Good- *inaudible* tests-...monitor *inaudible* #line:Doctor10
+Good- *inaudible* tests-...monitor *inaudible* #line:Doctor10 //Doctor tells the player they will run some tests
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
-<<play_inner_monologue9A YarnCommands>> //plays the inner monologue for the player
 <<play_inner_monologue10A YarnCommands>> //plays the inner monologue for the player
+<<play_inner_monologue11A YarnCommands>> //plays the inner monologue for the player
 <<player_response_10a YarnCommands>> //plays the player response
     <<jump DoctorL3>> //jumps to the next scene
 ===
@@ -437,9 +437,9 @@ title: DoctorL3
 tags:
 ---
 <<talking_doctor_animation YarnCommands>> //start the doctors talking animation
-*inaudible* #line:Doctor11
+*inaudible* #line:Doctor11 //Doctor tells the player they will run some tests
 <<stop_talking_doctor_animation YarnCommands>> //stops the doctors talking animation
-<<play_inner_monologue11A YarnCommands>> //plays the inner monologue for the player
+<<play_inner_monologue12A YarnCommands>> //plays the inner monologue for the player
 <<activate_simulationB YarnCommands>> //activates the second simulation
 
 title:Survey

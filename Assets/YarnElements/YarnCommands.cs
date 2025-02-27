@@ -26,29 +26,39 @@ public class YarnCommands : MonoBehaviour
 
     public CameraFader cameraFader;
 
-    [Header("Inner Monologue")]
+    [Header("Inner MonologueA")]
     public AudioSource innerMonologue1A;
-    public AudioSource innerMonologue1B;
     public AudioSource innerMonologue2A;
-    public AudioSource innerMonologue2B;
     public AudioSource innerMonologue3A;
-    public AudioSource innerMonologue3B;
     public AudioSource innerMonologue4A;
-    public AudioSource innerMonologue4B;
     public AudioSource innerMonologue5A;
-    public AudioSource innerMonologue5B;
     public AudioSource innerMonologue6A;
-    public AudioSource innerMonologue6B;
     public AudioSource innerMonologue7A;
-    public AudioSource innerMonologue7B;
     public AudioSource innerMonologue8A;
-    public AudioSource innerMonologue8B;
     public AudioSource innerMonologue9A;
-    public AudioSource innerMonologue9B;
     public AudioSource innerMonologue10A;
-    public AudioSource innerMonologue10B;
     public AudioSource innerMonologue11A;
+    public AudioSource innerMonologue12A;
+    public AudioSource innerMonologue13A;
+    public AudioSource innerMonologue14A;
+    public AudioSource innerMonologue15A;
+    public AudioSource innerMonologue16A;
+    public AudioSource innerMonologue17A;
+
+
+    [Header("Inner MonologueB")]
+    public AudioSource innerMonologue1B;
+    public AudioSource innerMonologue2B;
+    public AudioSource innerMonologue3B;
+    public AudioSource innerMonologue4B;
+    public AudioSource innerMonologue5B;
+    public AudioSource innerMonologue6B;
+    public AudioSource innerMonologue7B;
+    public AudioSource innerMonologue8B;
+    public AudioSource innerMonologue9B;
+    public AudioSource innerMonologue10B;
     public AudioSource innerMonologue11B;
+
 
     [Header("Doctor Lines")]
     public AudioSource doctorQuestionOne;
@@ -60,7 +70,7 @@ public class YarnCommands : MonoBehaviour
     public AudioSource doctorQuestionSeven;
     public AudioSource doctorQuestionEight;
 
-    [Header("Player ResponsesA")]
+    [Header("PlayerLinesA")]
     public AudioSource playerResponse1A;
     public AudioSource playerResponse2A;
     public AudioSource playerResponse3A;
@@ -70,9 +80,9 @@ public class YarnCommands : MonoBehaviour
     public AudioSource playerResponse7A;
     public AudioSource playerResponse8A;
     public AudioSource playerResponse9A;
-    public AudioSource playerResponse10A;
 
-    [Header("Player ResponsesB")]
+
+    [Header("PlayerLinesB")]
     public AudioSource playerResponse1B;
     public AudioSource playerResponse2B;
     public AudioSource playerResponse3B;
