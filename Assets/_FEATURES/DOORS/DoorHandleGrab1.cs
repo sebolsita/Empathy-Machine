@@ -4,61 +4,55 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Amused.Interactions
 {
-    public class DualTriggerDoor : MonoBehaviour
+    public class SimpleDoorTouch : MonoBehaviour
     {
         #region PUBLIC PROPERTIES
-        public Transform door; // Assign door transform in Inspector
+        public Transform door; // Assign the door in Inspector
+        public float openAngle = -120f;
+        public float closedAngle = 0f;
         public float rotationSpeed = 3f;
-        public float leftOpenAngle = -90f;  // Rotation when touched from left side
-        public float rightOpenAngle = 90f;  // Rotation when touched from right side
-        public Collider leftTrigger;  // Assign the left collider in Inspector
-        public Collider rightTrigger; // Assign the right collider in Inspector
         #endregion
 
         #region PRIVATE VARIABLES
-        private bool isMoving = false;  // Prevents multiple triggers at once
+        private bool isOpen = false;
         private Coroutine rotateCoroutine;
         #endregion
 
         #region UNITY METHODS
         private void OnTriggerEnter(Collider other)
         {
-            if (isMoving) return;  // Ignore triggers while door is already moving
+            Debug.Log($"[SimpleDoorTouch] Trigger entered by: {other.gameObject.name}");
 
             if (other.CompareTag("PlayerHand"))
             {
-                Debug.Log($"[DualTriggerDoor] PlayerHand detected by: {other.gameObject.name}");
-                if (other == leftTrigger)
-                {
-                    MoveDoor(leftOpenAngle);
-                }
-                else if (other == rightTrigger)
-                {
-                    MoveDoor(rightOpenAngle);
-                }
+                Debug.Log("[SimpleDoorTouch] PlayerHand detected! Toggling door.");
+                ToggleDoor();
+            }
+            else
+            {
+                Debug.Log($"[SimpleDoorTouch] Ignored object: {other.gameObject.name}");
             }
         }
         #endregion
 
         #region PRIVATE METHODS
-        private void MoveDoor(float targetAngle)
+        private void ToggleDoor()
         {
+            Debug.Log($"[SimpleDoorTouch] Toggling door. Current State: {(isOpen ? "Open" : "Closed")}");
+
             if (rotateCoroutine != null) StopCoroutine(rotateCoroutine);
-            rotateCoroutine = StartCoroutine(RotateDoor(targetAngle));
+            rotateCoroutine = StartCoroutine(RotateDoor(isOpen ? closedAngle : openAngle));
+            isOpen = !isOpen;
         }
         #endregion
 
         #region COROUTINES
         private IEnumerator RotateDoor(float targetAngle)
         {
-            isMoving = true; // Disable trigger detection while moving
-            leftTrigger.enabled = false;
-            rightTrigger.enabled = false;
-
             float startAngle = door.localEulerAngles.y;
             float elapsedTime = 0f;
 
-            Debug.Log($"[DualTriggerDoor] Rotating to {targetAngle}°");
+            Debug.Log($"[SimpleDoorTouch] Starting rotation to {targetAngle}°.");
 
             while (elapsedTime < 1f)
             {
@@ -69,11 +63,7 @@ namespace Amused.Interactions
             }
 
             door.localEulerAngles = new Vector3(0, targetAngle, 0);
-            Debug.Log($"[DualTriggerDoor] Rotation complete. New angle: {door.localEulerAngles.y}");
-
-            isMoving = false; // Re-enable trigger detection
-            leftTrigger.enabled = true;
-            rightTrigger.enabled = true;
+            Debug.Log($"[SimpleDoorTouch] Door rotation complete. New angle: {door.localEulerAngles.y}");
         }
         #endregion
     }
