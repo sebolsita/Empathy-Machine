@@ -26496,6 +26496,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interpreter
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9a3c512b3348942499d7bda5c6887f7d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 9a3c512b3348942499d7bda5c6887f7d,
         type: 3}
       propertyPath: m_Controller
@@ -41066,7 +41071,7 @@ GameObject:
   - component: {fileID: 960378839}
   - component: {fileID: 960378840}
   m_Layer: 0
-  m_Name: DoctorQuestionsInterpreter (6)
+  m_Name: DoctorQuestions (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
