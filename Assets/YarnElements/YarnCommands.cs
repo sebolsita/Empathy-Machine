@@ -26,6 +26,13 @@ public class YarnCommands : MonoBehaviour
 
     public CameraFader cameraFader;
 
+    [Header ("Inner Monologue A Waiting Room")]
+    public AudioSource innerMonologue1AWaitingRoom;
+    public AudioSource innerMonologue2AWaitingRoom;
+    public AudioSource innerMonologue3AWaitingRoom;
+    public AudioSource innerMonologue4AWaitingRoom;
+    public AudioSource innerMonologue5AWaitingRoom;
+
     [Header("Inner MonologueA")]
     public AudioSource innerMonologue1A;
     public AudioSource innerMonologue2A;
@@ -39,14 +46,10 @@ public class YarnCommands : MonoBehaviour
     public AudioSource innerMonologue10A;
     public AudioSource innerMonologue11A;
     public AudioSource innerMonologue12A;
-    public AudioSource innerMonologue13A;
-    public AudioSource innerMonologue14A;
-    public AudioSource innerMonologue15A;
-    public AudioSource innerMonologue16A;
-    public AudioSource innerMonologue17A;
 
+    [Header("Inner Monologue B Waiting Room")]
 
-    [Header("Inner MonologueB")]
+    [Header("Inner Monologue B")]
     public AudioSource innerMonologue1B;
     public AudioSource innerMonologue2B;
     public AudioSource innerMonologue3B;
@@ -105,13 +108,19 @@ public class YarnCommands : MonoBehaviour
     public AudioSource interpreterLineNine;
 
     [Header("Nurse")]
+    public AudioSource nurseLineZero;
     public AudioSource nurseLineOne;
+    public AudioSource nurseLineTwo;
+
 
     public AudioSource doorOpen;
+    public AudioSource rain;
+    public AudioSource peopleTalking;
+    public AudioSource stairsFootsteps;
+    public AudioSource footsteps;
+    public AudioSource phoneRing;
 
-    public GameObject door;
-
-
+    //public GameObject door;
 
     public void Start()
     {
@@ -120,13 +129,13 @@ public class YarnCommands : MonoBehaviour
 
     //Onboarding//
 
-    [YarnCommand("door_open")]
+    //[YarnCommand("door_open")]
 
-    public void DoorOpen()
-    {
-        door.transform.Rotate(0, 90, 0);
-        doorOpen.Play();
-    }
+    //public void DoorOpen()
+    //{
+    //    door.transform.Rotate(0, 90, 0);
+    //    doorOpen.Play();
+    //}
 
     [YarnCommand("activate_onboarding_stage_one")]
     public void ActivateOnboardingStageOne()
