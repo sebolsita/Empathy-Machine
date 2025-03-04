@@ -39,6 +39,7 @@ body {
     color: white;
     cursor: pointer;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 /* Navbar Wrapper */
@@ -46,6 +47,8 @@ body {
     position: relative;
     width: 100%;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 /* Navbar Links */
@@ -55,9 +58,10 @@ body {
     white-space: nowrap;
     list-style: none;
     padding: 5px 0;
-    gap: 15px;
+    gap: 12px; /* Reduce spacing between items */
     max-width: 100%;
     scroll-behavior: smooth;
+    justify-content: center; /* Center the links */
 }
 
 /* Hide Scrollbar */
@@ -69,8 +73,8 @@ body {
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 1em;
-    padding: 8px 12px;
+    font-size: 0.9em; /* Reduce font size */
+    padding: 6px 10px; /* Smaller padding */
     border-radius: 5px;
     transition: background 0.3s;
 }
@@ -89,9 +93,10 @@ body {
 /* GitHub Button */
 .github-btn {
     background: #ff5722;
-    padding: 8px 15px;
+    padding: 6px 10px;
     border-radius: 5px;
     transition: 0.3s;
+    font-size: 0.9em;
 }
 
 .github-btn:hover {
@@ -147,7 +152,7 @@ a {
     font-weight: bold;
 }
 
-/* Mobile: Move Navbar Below Title & Improve Scrolling */
+/* Mobile: Center Navbar & Reduce Button Size */
 @media (max-width: 768px) {
     .navbar {
         padding-bottom: 5px;
@@ -164,10 +169,23 @@ a {
     }
 
     .nav-links {
-        justify-content: flex-start;
+        justify-content: center;
         width: 100%;
-        overflow-x: auto; /* Enables scrolling */
+        overflow-x: auto;
         padding: 5px 0;
+        gap: 8px; /* Reduce gap even more on mobile */
+    }
+
+    /* Reduce button size */
+    .nav-links a {
+        font-size: 0.85em;
+        padding: 5px 8px;
+    }
+
+    /* Reduce GitHub button size */
+    .github-btn {
+        font-size: 0.85em;
+        padding: 5px 8px;
     }
 
     /* Scroll Fade Effect */
@@ -196,9 +214,3 @@ a {
     }
 }
 
-
-    .nav-wrapper::after {
-        right: 0;
-        background: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent);
-    }
-}
