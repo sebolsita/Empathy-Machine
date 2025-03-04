@@ -17,8 +17,12 @@ body {
     padding: 15px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+/* Navbar Container */
 .container {
     width: 90%;
     max-width: 1100px;
@@ -28,24 +32,38 @@ body {
     align-items: center;
 }
 
-/* Logo */
+/* Logo (Clickable as Home Button) */
 .logo {
     font-size: 1.5em;
     font-weight: bold;
     color: white;
+    cursor: pointer; /* Makes it a clickable button */
 }
 
 /* Navbar Links */
-.nav-links {
-    list-style: none;
+.nav-wrapper {
     display: flex;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+}
+
+.nav-links {
+    display: flex;
+    overflow-x: auto; /* Enables scrolling on small screens */
+    white-space: nowrap;
+    list-style: none;
+    padding: 5px 0;
     gap: 15px;
+    max-width: 100%;
 }
 
-.nav-links li {
-    display: inline;
+/* Hide Scrollbar */
+.nav-links::-webkit-scrollbar {
+    display: none;
 }
 
+/* Navbar Link Styles */
 .nav-links a {
     color: white;
     text-decoration: none;
@@ -57,6 +75,13 @@ body {
 
 .nav-links a:hover {
     background: #444;
+}
+
+/* Active Section Indicator */
+.nav-links a.active {
+    background: #444;
+    color: white;
+    border-radius: 5px;
 }
 
 /* GitHub Button */
@@ -73,22 +98,22 @@ body {
 
 /* Sections */
 .section {
-    padding: 40px 20px; /* Reduced padding to bring sections closer */
+    padding: 40px 20px;
     text-align: center;
     display: flex;
     justify-content: center;
-    margin-top: 20px; /* Space between sections */
+    margin-top: 20px;
 }
 
-/* First Section (Home) - Adds Space Below Navbar */
+/* First Section (Home) - Adjusted for Navbar Position */
 #home {
-    margin-top: 100px; /* Adjust this if navbar overlaps */
+    margin-top: 120px;
 }
 
 /* Content Box (Card-like Sections) */
 .content-box {
     background: white;
-    padding: 25px; /* Slightly reduced */
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     max-width: 800px;
@@ -118,4 +143,53 @@ a {
     color: #ff5722;
     text-decoration: none;
     font-weight: bold;
+}
+
+/* Mobile: Move Navbar Below Title & Improve Scrolling */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 5px;
+    }
+
+    .logo {
+        order: -1; /* Moves logo to the top */
+        margin-bottom: 10px;
+    }
+
+    .nav-wrapper {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .nav-links {
+        justify-content: flex-start;
+        width: 100%;
+        overflow-x: auto; /* Enables scrolling */
+        padding: 5px 0;
+    }
+
+    /* Scroll Fade Effect */
+    .nav-wrapper::before,
+    .nav-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 20px;
+        height: 100%;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    .nav-wrapper::before {
+        left: 0;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.2), transparent);
+    }
+
+    .nav-wrapper::after {
+        right: 0;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent);
+    }
 }
