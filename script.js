@@ -2,6 +2,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-links a");
     const logo = document.querySelector(".logo");
+    const navWrapper = document.querySelector(".nav-wrapper");
+    const navLinksContainer = document.querySelector(".nav-links");
+    const leftFade = document.querySelector(".nav-wrapper::before");
+    const rightFade = document.querySelector(".nav-wrapper::after");
+
+    /* Scroll to Top When Clicking Logo */
+    logo.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 
     /* Update Navbar Active Link on Scroll */
     function updateActiveNav() {
@@ -23,23 +32,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    /* Scroll to Top When Clicking Logo */
-    logo.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    /* Check If Navbar Needs Scroll Indicator */
+    function updateScrollIndicators() {
+        leftFade.style.opacity = navLinksContainer.scrollLeft > 0 ? "1" : "0";
+        rightFade.style.opacity = navLinksContainer.scrollLeft + navLinksContainer.clientWidth < navLinksContainer.scrollWidth ? "1" : "0";
+    }
 
-    /* Enable Smooth Scroll When Clicking Navbar Links */
-    navLinks.forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-            if (this.getAttribute("href").startsWith("#")) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute("href"));
-                target.scrollIntoView({ behavior: "smooth" });
-            }
-        });
-    });
-
-    /* Run Active Navbar Update on Scroll */
+    navLinksContainer.addEventListener("scroll", updateScrollIndicators);
     window.addEventListener("scroll", updateActiveNav);
-    updateActiveNav(); // Run on page load
+    updateActiveNav();
+    updateScrollIndicators();
 });
+
